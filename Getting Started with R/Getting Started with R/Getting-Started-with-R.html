@@ -167,7 +167,7 @@ RStudio Cloud is another product from [rstudio](rstudio.com) which gives you a l
 
 .pull-left[Click this link, [RStudio Cloud](https://rstudio.cloud/) to register or login to the rstudio IDE online.]
 
-.pull-right[![Bilikisu Wunmi Olatunji](rstudio-cloud.png)]
+.pull-right[![RStudio Cloud](rstudio-cloud.png)]
 
 
 ---
@@ -204,6 +204,85 @@ setwd("")
 getwd()
 ```
 
+
+---
+
+## Install and load packages in R
+
+### What is a package?
+
+
+
+```r
+# installing a single package with base R
+# install.packages("pacman")
+
+# installing multiple packages with base R
+# install.packages(c("tidyverse", "xlsx", "lubridate", "skimr", "janitor", "rmarkdown", "rio", "here"))
+```
+
+
+
+```r
+# Installing (if necessary) and load packages using pacman package
+# pacman::p_load(tidyverse, lubridate, xlsx, skimr, janitor, rmarkdown, rio, here)
+```
+
+---
+## Loading packages
+
+After installation, you need to load the package to access its functions and data. This can be done by loading the package with the `library` function, specifying the package name with or without quotation marks .
+
+
+```r
+library(tidyverse)
+```
+
+---
+## Installing the CRAN packages with the menu
+Alternatively, you can install R packages from the menu.
+
+In RStudio go to Tools → Install Packages and in the Install from option select Repository (CRAN) and then specify the packages you want.
+In classic R IDE go to Packages → Install package(s), select a mirror and install the package.
+
+---
+## Install R packages from GitHub or GitLab
+
+GitHub is a well-known code sharing platform for developers and package creators alike.
+
+
+```r
+#install.packages(devtools)
+#library(devtools)
+
+ # Installing ggplot2 from GitHub
+#install_github("tidyverse/ggplot2")
+```
+
+Other sources for installing packages in R include: zip, R-Forge, etc
+
+---
+## Update R packages
+R packages can be updated without the need to reinstall the packages over and over again when newer versions are available. 
+A full list of R packages that are not up-to-date can be seen with the `old.packages` function.
+
+
+```r
+#old.packages()
+```
+
+
+Updates can be made for the packages using the `install.packages` function or calling the `update.packages` function. Set the `update.packages` function's argument `ask` to FALSE, you will avoid R displaying prompting messages.
+
+
+```r
+# update.packages()
+# update.packages(ask = FALSE)
+```
+
+
+
+
 ---
 
 ## Getting help and resources
@@ -220,9 +299,28 @@ getwd()
 ## you could try '??janitor'
 ```
 
-- get specific package related to your field or profession from CRAN online using the search format as shown. **https://cran.r-project.org› package=packagename**
+
+You will also find useful examples to understand how the package works.
+
+
+```r
+help(package = ggplot2)
+```
+
+You can also use the `lsf.str` or `ls` commands to list all the functions inside an attached (loaded) package.
+
+
+```r
+# lsf.str("package:dplyr")
+# ls("package:janitor")
+```
+
+
+- You can also get specific package related to your field or profession from CRAN online using the search format as shown. **https://cran.r-project.org› package=packagename**
 
 - search on stackoverflow, Google, build your network
+
+You are ready to begin writing your first code! 
 
 ---
 class: center, middle

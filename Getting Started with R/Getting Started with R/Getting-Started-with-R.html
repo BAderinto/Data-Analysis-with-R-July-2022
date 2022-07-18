@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Analysis using R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Olatunji Bilikisu Wunmi" />
+    <meta name="author" content="Amanyiraho Robinson" />
+    <meta name="date" content="2022-07-18" />
+    <script src="Getting-Started-with-R_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Data Analysis using R
+]
+.subtitle[
+## Module One
+]
+.author[
+### Olatunji Bilikisu Wunmi
+]
+.author[
+### Amanyiraho Robinson
+]
+.institute[
+### Business Data Laboratory
+]
+.date[
+### 2022-07-18
+]
+
+---
+
+
+
+
+
+class: inverse center middle
+
+# Meet Our Instructors &amp;#x1F60A;
+
+---
+
+## Instructor Profile
+
+.pull-left[
+![Bilikisu Wunmi Olatunji](profile-pix.jpg)
+]
+
+.pull-right[
+## Olatunji Bilikisu Wunmi
+
+Bio: Bilikisu is the founder of Business Data Laboratory. Before starting her own consulting firm, she has over 16 years of experience working a software developer, and business analyst. She is currently a Data scientist/R Shiny developer. As a passionate R programming enthusiast and user, she founded the Abuja R Users Group and R-Ladies Abuja which she co-organizes with fellow r enthusiasts from various professions and academics. As a passionate trainer, she is a Certified RStudio Instructor.
+]
+
+---
+## Instructor Profile
+
+.pull-left[
+![Amanyiraho Robins](amanyiraho.jpg)
+]
+
+.pull-right[
+## Amanyiraho Robinson
+
+Bio: Amanyiraho Robinson has a background in Statistics and a profound experience in data analystics, majorly using R. Robinson is a certified R studio instructor and specialises in building R shiny dashboards for Public Health and Business intelligence.
+]
+
+---
+## Instructor Profile
+
+.pull-left[
+![Samson Dada](samson.jpg)
+]
+
+.pull-right[
+## Samson Dada
+
+Bio: Samson Dada has worked in the IT and Business Consulting industry for over 15 years, gaining experience in design, development and deployment of bespoke IT systems. As a seasoned Business and IT Consultant, he is passionate about advancing a data-driven culture in the workplace and leveraging programming skills to develop automated systems that help companies improve business operations. Samson enjoys meeting new people, building new relationships, solving problems and contributing to the growth of businesses.
+]
+
+
+---
+class: inverse center middle
+
+# Let's meet YOU! &amp;#x1F60A;
+
+
+---
+## Getting Started with R
+
+### Topics to be covered are as follows:
+
+- R, Why R?
+
+- Installing R, RStudio, Packages
+
+- Understanding and Customizing RStudio IDE
+
+- R Files and Project structures
+
+
+---
+class: inverse center middle
+
+# R, Why R?
+
+---
+
+## What is R programming language?
+
+&gt; R is a language and environment for statistical computing and graphics. 
+
+## Why R?
+
+1. R language is Open Source
+
+2. R language is an all-in-one package of a Statistical Analysis toolkit
+
+3. R has excellent charting benefits
+
+4. R language has robust and vibrant online community
+
+5. R language has a powerful package ecosystem
+
+---
+
+## The R environment
+ - R is an integrated suite of software facilities for data manipulation, calculation and graphical display. It includes
+
+ - an effective data handling and storage facility,
+a suite of operators for calculations on arrays, in particular matrices,
+
+ - a large, coherent, integrated collection of intermediate tools for data analysis,
+ - graphical facilities for data analysis and display either on-screen or on hardcopy, and
+ - a well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities.
+
+Many users think of R as a statistics system. We prefer to think of it as an environment within which statistical techniques are implemented.
+
+.footnote[(r-project.org, 2022)]
+
+
+---
+class: inverse center middle
+
+# Installing R, RStudio, Packages
+
+---
+
+## How to install R and RStudio
+
+To get yourself ready to start a journey learning r programming, you need to get a computer system that has R installed on it and an IDE that makes learning easy and fun like RStudio. You can get this done by following this steps in order:
+
+1.  Install R Download R for Mac by opening this link [mac](https://cran.r-project.org/bin/macosx/) or this link for [windows](https://cran.r-project.org/bin/windows/base/). The links would open a web page showing you how to download the appropriate files right for your computer's operating system. Install R by double-clicking the downloaded and follow ths simple promts and default selected options to complete your installation. When you are done with this installation, follow the next step below.
+
+2.  Install RStudio IDE Click this link [rstudio IDE](https://www.rstudio.com/products/rstudio/download/) to download the installation file. Scroll down the web page to click the button for the **RStudio FREE download** option. &lt;br&gt;
+
+3. Double-click the downloaded file and follow the prompt to install your IDE. That's it!
+
+---
+## RStudio cloud
+
+RStudio Cloud is another product from [rstudio](rstudio.com) which gives you a lightweight, cloud-based version of RStudio Desktop IDE that allows you work with your r scripts, projects online and also share with your colleagues. 
+
+.pull-left[Click this link, [RStudio Cloud](https://rstudio.cloud/) to register or login to the rstudio IDE online.]
+
+.pull-right[![Bilikisu Wunmi Olatunji](rstudio-cloud.png)]
+
+
+---
+
+## Customize your RStudio IDE
+
+RStudio IDE provides options for you to customize your working enviroment to suit your personality. These options are accessible from the Options dialog via Tools &gt; Options menu. Let's take a walk through in the RStudio IDE to do the customization together.
+.pull-left[
+## RStudio IDE Panes
+- source
+- console
+- environment 
+- files, plots, packages, etc]
+
+.pull-right[![RStudio IDE Panes](rstudio-ide-panes.png)]
+
+
+
+---
+## Files and Project structure in RStudio
+
+- Files: scripts, data files, etc
+- Projects: New Project, R Package, other project types
+
+## Set and get working directory
+
+
+
+```r
+# insert your directory location or address into the double quotation mark
+setwd("")
+
+# get and display working directory location or address
+getwd()
+```
+
+---
+
+## Getting help and resources
+
+- type question mark before a function or package name to get more information as show below
+
+
+```r
+?janitor
+```
+
+```
+## No documentation for 'janitor' in specified packages and libraries:
+## you could try '??janitor'
+```
+
+- get specific package related to your field or profession from CRAN online using the search format as shown. **https://cran.r-project.org› package=packagename**
+
+- search on stackoverflow, Google, build your network
+
+---
+class: center, middle
+
+# Thanks!
+
+We are really honored to take you through this journey learning R programming and acquiring the skills to perform data analysis using R. 
+
+
+[Business Data Laboratory Limited](https://www.business-datalab.com)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(logo_bdl.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+---
+title: "Data Analysis using R"
+subtitle: "Module One"  
+author: 
+  - "Olatunji Bilikisu Wunmi"
+  - "Amanyiraho Robinson"
+institute: "Business Data Laboratory"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+
+class: inverse center middle
+
+# Meet Our Instructors &#x1F60A;
+
+---
+
+## Instructor Profile
+
+.pull-left[
+![Bilikisu Wunmi Olatunji](profile-pix.jpg)
+]
+
+.pull-right[
+## Olatunji Bilikisu Wunmi
+
+Bio: Bilikisu is the founder of Business Data Laboratory. Before starting her own consulting firm, she has over 16 years of experience working a software developer, and business analyst. She is currently a Data scientist/R Shiny developer. As a passionate R programming enthusiast and user, she founded the Abuja R Users Group and R-Ladies Abuja which she co-organizes with fellow r enthusiasts from various professions and academics. As a passionate trainer, she is a Certified RStudio Instructor.
+]
+
+---
+## Instructor Profile
+
+.pull-left[
+![Amanyiraho Robins](amanyiraho.jpg)
+]
+
+.pull-right[
+## Amanyiraho Robinson
+
+Bio: Amanyiraho Robinson has a background in Statistics and a profound experience in data analystics, majorly using R. Robinson is a certified R studio instructor and specialises in building R shiny dashboards for Public Health and Business intelligence.
+]
+
+---
+## Instructor Profile
+
+.pull-left[
+![Samson Dada](samson.jpg)
+]
+
+.pull-right[
+## Samson Dada
+
+Bio: Samson Dada has worked in the IT and Business Consulting industry for over 15 years, gaining experience in design, development and deployment of bespoke IT systems. As a seasoned Business and IT Consultant, he is passionate about advancing a data-driven culture in the workplace and leveraging programming skills to develop automated systems that help companies improve business operations. Samson enjoys meeting new people, building new relationships, solving problems and contributing to the growth of businesses.
+]
+
+
+---
+class: inverse center middle
+
+# Let's meet YOU! &#x1F60A;
+
+
+---
+## Getting Started with R
+
+### Topics to be covered are as follows:
+
+- R, Why R?
+
+- Installing R, RStudio, Packages
+
+- Understanding and Customizing RStudio IDE
+
+- R Files and Project structures
+
+
+---
+class: inverse center middle
+
+# R, Why R?
+
+---
+
+## What is R programming language?
+
+> R is a language and environment for statistical computing and graphics. 
+
+## Why R?
+
+1. R language is Open Source
+
+2. R language is an all-in-one package of a Statistical Analysis toolkit
+
+3. R has excellent charting benefits
+
+4. R language has robust and vibrant online community
+
+5. R language has a powerful package ecosystem
+
+---
+
+## The R environment
+ - R is an integrated suite of software facilities for data manipulation, calculation and graphical display. It includes
+
+ - an effective data handling and storage facility,
+a suite of operators for calculations on arrays, in particular matrices,
+
+ - a large, coherent, integrated collection of intermediate tools for data analysis,
+ - graphical facilities for data analysis and display either on-screen or on hardcopy, and
+ - a well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities.
+
+Many users think of R as a statistics system. We prefer to think of it as an environment within which statistical techniques are implemented.
+
+.footnote[(r-project.org, 2022)]
+
+
+---
+class: inverse center middle
+
+# Installing R, RStudio, Packages
+
+---
+
+## How to install R and RStudio
+
+To get yourself ready to start a journey learning r programming, you need to get a computer system that has R installed on it and an IDE that makes learning easy and fun like RStudio. You can get this done by following this steps in order:
+
+1.  Install R Download R for Mac by opening this link [mac](https://cran.r-project.org/bin/macosx/) or this link for [windows](https://cran.r-project.org/bin/windows/base/). The links would open a web page showing you how to download the appropriate files right for your computer's operating system. Install R by double-clicking the downloaded and follow ths simple promts and default selected options to complete your installation. When you are done with this installation, follow the next step below.
+
+2.  Install RStudio IDE Click this link [rstudio IDE](https://www.rstudio.com/products/rstudio/download/) to download the installation file. Scroll down the web page to click the button for the **RStudio FREE download** option. <br>
+
+3. Double-click the downloaded file and follow the prompt to install your IDE. That's it!
+
+---
+## RStudio cloud
+
+RStudio Cloud is another product from [rstudio](rstudio.com) which gives you a lightweight, cloud-based version of RStudio Desktop IDE that allows you work with your r scripts, projects online and also share with your colleagues. 
+
+.pull-left[Click this link, [RStudio Cloud](https://rstudio.cloud/) to register or login to the rstudio IDE online.]
+
+.pull-right[![Bilikisu Wunmi Olatunji](rstudio-cloud.png)]
+
+
+---
+
+## Customize your RStudio IDE
+
+RStudio IDE provides options for you to customize your working enviroment to suit your personality. These options are accessible from the Options dialog via Tools > Options menu. Let's take a walk through in the RStudio IDE to do the customization together.
+.pull-left[
+## RStudio IDE Panes
+- source
+- console
+- environment 
+- files, plots, packages, etc]
+
+.pull-right[![RStudio IDE Panes](rstudio-ide-panes.png)]
+
+
+
+---
+## Files and Project structure in RStudio
+
+- Files: scripts, data files, etc
+- Projects: New Project, R Package, other project types
+
+## Set and get working directory
+
+
+```{r eval=FALSE}
+# insert your directory location or address into the double quotation mark
+setwd("")
+
+# get and display working directory location or address
+getwd()
+```
+
+---
+
+## Getting help and resources
+
+- type question mark before a function or package name to get more information as show below
+
+```{r}
+?janitor
+```
+
+- get specific package related to your field or profession from CRAN online using the search format as shown. **https://cran.r-project.org› package=packagename**
+
+- search on stackoverflow, Google, build your network
+
+---
+class: center, middle
+
+# Thanks!
+
+We are really honored to take you through this journey learning R programming and acquiring the skills to perform data analysis using R. 
+
+
+[Business Data Laboratory Limited](https://www.business-datalab.com)
+

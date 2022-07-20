@@ -26,7 +26,7 @@ class: center, middle, inverse, title-slide
 # Data Analysis using R
 ]
 .subtitle[
-## Module One
+## Module One - R Basics
 ]
 .author[
 ### Olatunji Bilikisu Wunmi
@@ -47,69 +47,419 @@ class: center, middle, inverse, title-slide
 
 
 
-## Typography
+class: inverse center middle
 
-Text can be **bold**, _italic_, ~~strikethrough~~, or `inline code`.
-
-[Link to another slide](#colors).
-
-### Lorem Ipsum
-
-Dolor imperdiet nostra sapien scelerisque praesent curae metus facilisis dignissim tortor. 
-Lacinia neque mollis nascetur neque urna velit bibendum. 
-Himenaeos suspendisse leo varius mus risus sagittis aliquet venenatis duis nec.
-
-- Dolor cubilia nostra nunc sodales
-
-- Consectetur aliquet mauris blandit
-
-- Ipsum dis nec porttitor urna sed
-
----
-name: colors
-
-## Colors
-
-.left-column[
-Text color
-
-[Link Color](#3)
-
-**Bold Color**
-
-_Italic Color_
-
-`Inline Code`
-]
-
-.right-column[
-Lorem ipsum dolor sit amet, [consectetur adipiscing elit (link)](#3), 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Erat nam at lectus urna.
-Pellentesque elit ullamcorper **dignissim cras tincidunt (bold)** lobortis feugiat. 
-_Eros donec ac odio tempor_ orci dapibus ultrices. 
-Id porta nibh venenatis cras sed felis eget velit aliquet.
-Aliquam id diam maecenas ultricies mi.
-Enim sit amet 
-`code_color("inline")`
-venenatis urna cursus eget nunc scelerisque viverra.
-]
+# Data types in R
 
 ---
 
-# Big Topic or Inverse Slides `#`
+## Data types (Character, Numeric, Interger, Complex, Logical)
 
-## Slide Headings `##`
+The best and right way to start your journey learning R programming language is to have a solid understanding of data types and structures and when to use them.
 
-### Sub-slide Headings `###`
+To begin, **remember that in R, everything is an object**.
 
-#### Bold Call-Out `####`
+Next, we are looking at **some** of the basic data types in R.
 
-This is a normal paragraph text. Only use header levels 1-4.
+---
+## Data types (Character, Numeric, Interger, Complex, Logical)
 
-##### Possible, but not recommended `#####`
+1. Character - **symbols, letters, words or phrases** in single or double quotation marks
 
-###### Definitely don't use h6 `######`
+--
+
+2. Numeric - all **real numbers with or without decimal values**.
+
+--
+
+3. Integer - **real values without decimal points**. The suffix L is used to specify integer data.
+
+--
+
+4. Complex - **purely imaginary values** in R.The suffix i is used to specify the imaginary part.
+
+--
+5. Logical - also known as **boolean** data type. It can only have two values: TRUE and FALSE.
+
+---
+
+## Examples of Data types 
+
+
+```r
+x &lt;-  0.6  ## numeric
+x &lt;- TRUE  ## logical
+x &lt;-  F    ## logical
+x &lt;- "c"   ## character
+x &lt;- "10"  ## character
+x &lt;- 29    ## integer
+x &lt;- 2.9   ## integer
+x &lt;- 2+4i  ## complex
+```
+
+- Checking the data types
+
+
+```r
+class("12") 
+```
+
+```
+## [1] "character"
+```
+
+```r
+typeof(0.6) 
+```
+
+```
+## [1] "double"
+```
+
+---
+class: inverse center middle
+
+# Data structures in R
+
+---
+
+## Data structures in R 
+
+Different data structures in R includes:
+1. Vector
+
+2. List 
+
+3. Matrix
+
+4. Array
+
+5. Data frame
+
+6. String 
+
+7. Factors
+
+---
+
+## Vector 
+  
+  - same type, mixed data types are not allowed
+
+
+```r
+x &lt;- c(0.5, 0.6, 1)    ## numeric
+x &lt;- c(TRUE, FALSE)    ## logical
+x &lt;- c("a", "b", "c")  ## character
+x &lt;- 9:29              ## integer
+x &lt;- c(1+0i, 2+4i)     ## complex
+```
+
+--
+
+- use the vector() function to initialize vectors.
+
+```r
+x &lt;- vector("numeric", length = 10) 
+x
+```
+
+```
+##  [1] 0 0 0 0 0 0 0 0 0 0
+```
+---
+
+## Vector
+
+- Mixing different classes of R objects together in a vector?
+
+
+```r
+a &lt;- c(1.7, "a")   ## character
+b &lt;- c(TRUE, 2)    ## numeric
+c &lt;- c("a", TRUE)  ## character
+```
+
+--
+So, what happened?
+
+- When different objects are mixed in a vector, **coercion** occurs. That is every element in the vector become the same class.
+
+---
+
+## Vector
+
+Coercion can create different effect
+a. implicit coercion - R tries to represent all of the objects in the vector in a reasonable way as one type 
+
+
+```r
+a &lt;- c(1.7, "a")   ## character
+
+class(a)
+```
+
+```
+## [1] "character"
+```
+
+
+---
+
+## Vector
+
+b. explicit coercion - We manually force coercion from one class to another using the `as.*` functions, if available.
+
+
+```r
+x &lt;- 0:6
+class(x)
+```
+
+```
+## [1] "integer"
+```
+
+--
+
+
+```r
+as.numeric(x)
+```
+
+```
+## [1] 0 1 2 3 4 5 6
+```
+
+```r
+as.logical(x)
+```
+
+```
+## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+```
+
+```r
+as.character(x)
+```
+
+```
+## [1] "0" "1" "2" "3" "4" "5" "6"
+```
+
+
+---
+## Vector
+
+- NAs are returned when explicit coercion occurs and R can't figure out how to coerce the objects.
+
+```r
+x &lt;- c("v", "g", "d")
+as.numeric(x)
+```
+
+```
+## [1] NA NA NA
+```
+
+```r
+as.logical(x)
+```
+
+```
+## [1] NA NA NA
+```
+
+```r
+as.complex(x)
+```
+
+```
+## [1] NA NA NA
+```
+
+---
+
+## List
+
+- special type of vector that can contain elements of different classes. 
+
+- explicitly created using the `list()` function
+
+
+```r
+x &lt;- list(1, "a", TRUE, 1 + 4i) 
+x
+```
+
+```
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] "a"
+## 
+## [[3]]
+## [1] TRUE
+## 
+## [[4]]
+## [1] 1+4i
+```
+
+- create an empty list, specifying the length with the `vector()` function
+
+```r
+x &lt;- vector("list", length = 5)
+x
+```
+
+```
+## [[1]]
+## NULL
+## 
+## [[2]]
+## NULL
+## 
+## [[3]]
+## NULL
+## 
+## [[4]]
+## NULL
+## 
+## [[5]]
+## NULL
+```
+
+
+
+---
+
+## Matrix
+
+- vectors with a dimension attribute. which is an integer vector of length 2 (number of rows, number of columns)
+
+- use `dim` and `attributes` function to get the dimension values
+
+
+```r
+my_mat &lt;- matrix(nrow = 2, ncol = 3) 
+my_mat
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]   NA   NA   NA
+## [2,]   NA   NA   NA
+```
+
+
+```r
+dim(my_mat)
+```
+
+```
+## [1] 2 3
+```
+
+```r
+attributes(my_mat)
+```
+
+```
+## $dim
+## [1] 2 3
+```
+
+---
+
+## Matrix
+
+- they are constructed column-wise, starting from the “upper left” corner and running down the columns.
+
+
+```r
+m &lt;- matrix(1:6, nrow = 2, ncol = 3) 
+m
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+```
+
+
+- they can also be created directly from vectors by adding a dimension attribute.
+
+
+```r
+mat_from_vec &lt;- 1:10 
+mat_from_vec
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```r
+dim(mat_from_vec) &lt;- c(2, 5)
+mat_from_vec
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
+```
+
+
+---
+
+## Matrix
+
+- Matrices can be created by column-binding or row-binding using the cbind() and rbind() functions.
+
+
+```r
+x &lt;- 1:3
+y &lt;- 10:12
+cbind(x, y)
+```
+
+```
+##      x  y
+## [1,] 1 10
+## [2,] 2 11
+## [3,] 3 12
+```
+
+```r
+rbind(x, y) 
+```
+
+```
+##   [,1] [,2] [,3]
+## x    1    2    3
+## y   10   11   12
+```
+
+---
+
+## Array
+
+
+---
+
+## Data Frame
+
+
+---
+
+## String
+
+---
+
+## Factors
 
 ---
 
@@ -382,8 +732,8 @@ exclude: false
 DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
 ```
 
-<div id="htmlwidget-28bbca026b4ba5493a15" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-28bbca026b4ba5493a15">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9cd5b86fe1a75113cf00" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9cd5b86fe1a75113cf00">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 layout: true

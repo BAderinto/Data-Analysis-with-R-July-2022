@@ -33,6 +33,7 @@ knitr::opts_chunk$set(
 ```
 
 ---
+
 class: inverse center middle
 
 # Meet Our Instructors &#x1F60A;
